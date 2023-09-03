@@ -1,0 +1,24 @@
+{
+  "href": "/",
+  "store_name": "Daily Dairy Store",
+  "store_url": "https://dailydairystore.myshopify.com",
+  "blog_name": "Home",
+  "store_logo_url": "",
+  "top_menu_items": [
+    {
+      "href": "/",
+      "name": "Home",
+      "current": true
+    },
+    {
+      "href": "/about",
+      "name": "About",
+      "current": false
+    },
+    {
+      "href": "/contact",
+      "name": "Contact",
+      "current": false
+    }
+  ]
+}
