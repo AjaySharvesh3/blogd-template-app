@@ -55,6 +55,7 @@ const TopNav = () => {
                                 <div className="flex items-center">
                                     <div className="flex cursor-pointer items-baseline space-x-4 m-auto text-center ">
                                         <div
+                                            id={"blogd-store-name"}
                                             onClick={() => {
                                                 window.location.href = "/";
                                             }}

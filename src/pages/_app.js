@@ -6,7 +6,7 @@ function MyApp({Component, pageProps}) {
     return (
         <>
             <Head>
-                <script src="/analytics-script.js"/>
+                <script type="module" src="/analytics-script.js"/>
             </Head>
             <Component {...pageProps} />
             <NewsletterPopup/>

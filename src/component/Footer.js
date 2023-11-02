@@ -22,13 +22,27 @@ const Footer = () => {
                             </div>
                         </div>
                         
-                        <div className="hidden md:block">
+                        <div className="md:block">
                             <div className="flex items-baseline space-x-4">
                                 {/*{FooterMain.top_center_menu_items.map(item => (*/}
-                                    <div className="text-gray-500 text-xs font-semibold px-3 uppercase tracking-wider py-2 m-auto text-center cursor-pointer"
-                                         aria-current="page">
-                                        Copyrights 2023 @ {TopNavMain.store_name}
-                                    </div>
+                                <div
+                                    className="text-gray-500 text-xs font-semibold px-3 tracking-wider py-2 m-auto text-center cursor-pointer"
+                                    aria-current="page">
+                                    Copyrights 2023 @ {TopNavMain.store_name}
+                                </div>
+                                
+                                <div className={"hidden"}
+                                     id={"blogd-store-name"}>
+                                    {TopNavMain.store_name}
+                                </div>
+                                <div className={"hidden"}
+                                     id={"blogd-store-url"}>
+                                    {TopNavMain.store_url}
+                                </div>
+                                <div className={"hidden"}
+                                     id={"blogd-blog-name"}>
+                                    {TopNavMain.blog_name}
+                                </div>
                                 {/*))}*/}
                             </div>
                         </div>

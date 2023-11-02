@@ -1,3 +1,6 @@
+// import {store_name, store_url, blog_name, store_logo_url} from '../src/config/TopNavMain.json';
+// const {store_name, store_url, blog_name, store_logo_url} = require('../src/config/TopNavMain.json');
+
 let currentRoute = window.location.pathname;
 let startTime = new Date();
 
@@ -8,13 +11,14 @@ function formatTime(milliseconds) {
     return `${hours}h ${minutes % 60}m ${seconds % 60}s`;
 }
 
-document.addEventListener('click', function (event) {
+window.addEventListener('click', function(event) {
     // Calculate time spent on the previous route
     const currentTime = new Date();
     const timeSpent = currentTime - startTime;
     
     // Update the current route and start time
     currentRoute = window.location.pathname;
+    const fullURL = window.location.href;
     startTime = currentTime;
     
     const screenInfo = {
@@ -26,6 +30,7 @@ document.addEventListener('click', function (event) {
         type: event.target.tagName,
         screenInfo: screenInfo,
         timestamp: new Date().toString(),
+        fullURL: fullURL,
         currentRoute: currentRoute,
         timeSpentOnRoute: formatTime(timeSpent),
     };
@@ -115,7 +120,7 @@ document.addEventListener('click', function (event) {
         };
         
         const e = module.init();
-
+        
         eventObject.deviceDetails = {
             os_name: e.os.name,
             os_version: e.os.version,
@@ -127,7 +132,7 @@ document.addEventListener('click', function (event) {
             vendor: navigator.vendor,
         };
     }());
-
+    
     // Get Client IP Address
     (function () {
         fetch("https://api.ipify.org/?format=json")
@@ -141,7 +146,7 @@ document.addEventListener('click', function (event) {
                 console.log(e)
             })
     }());
-
+    
     // Get Geolocation of client using IP API
     /*function getClientGeolocationFromIPApi(ip) {
         fetch(`http://ip-api.com/json/${ip}`)
@@ -155,20 +160,35 @@ document.addEventListener('click', function (event) {
             });
     }*/
     
-    console.log('eventObject:', eventObject);
-});
-
-
-const divElement = document.querySelector('#div-id');
-let divStartTime;
-
-divElement.addEventListener('click', function () {
-    if (!divStartTime) {
-        divStartTime = new Date();
-    } else {
-        const currentTime = new Date();
-        const timeSpentOnDiv = currentTime - divStartTime;
-        console.log('Time spent on div:', timeSpentOnDiv);
-        divStartTime = currentTime;
-    }
+    // event.store = {
+    //     store_name, store_url, blog_name, store_logo_url
+    // }
+    
+    eventObject.store_name = document.getElementById("blogd-store-name").firstChild.data;
+    eventObject.store_url = document.getElementById("blogd-store-url").firstChild.data;
+    eventObject.blog_name = document.getElementById("blogd-blog-name").firstChild.data;
+    
+    // (function () {
+    //     fetch("http://localhost:4001/api/analytics", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(eventObject),
+    //     })
+    //         .then(response => {
+    //             if (!response.ok) {
+    //                 throw new Error("Network response was not ok");
+    //             }
+    //             return response.json();
+    //         })
+    //         .then(data => {
+    //             console.log(data);
+    //         })
+    //         .catch(error => {
+    //             console.error("Error:", error);
+    //         });
+    // })();
+    
+    
 });
