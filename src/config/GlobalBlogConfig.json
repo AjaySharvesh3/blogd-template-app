@@ -1,0 +1,29 @@
+{
+  "show_author_and_last_updated_date": true,
+  "show_author_and_last_updated_position": "top",
+  "popup_config": {
+    "title": "",
+    "button_text": "",
+    "button_color": "",
+    "show_name_field": true,
+    "show_email_field": true,
+    "popup_trigger": "on-page-loadd"
+  },
+  "template_config": {
+    "accent_color": "yellow",
+    "show_search_bar": true,
+    "top_menu_position": "right",
+    "show_image_in_article": true,
+    "show_meta_description_in_article": true,
+    "row_count": 2
+  },
+  "top_nav_main_config": {
+    "href": "/",
+    "store_name": "Daily Dairy Store",
+    "store_url": "https://dailydairystore.myshopify.com",
+    "blog_name": "Home",
+    "store_logo_url": ""
+  }
+}
+
+

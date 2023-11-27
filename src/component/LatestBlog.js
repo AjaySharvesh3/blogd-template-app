@@ -1,16 +1,20 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import {useRouter} from "next/router";
 import Img from "../assets/images/img.png";
-import ListingConfig from "../config/TemplateConfig.json";
 
 
 export default function LatestBlog({articles}) {
     
     const router = useRouter();
+    const [articlesArray, setArticlesArray] = useState([]);
+    
+    function convertObjectToArray() {
+        return Object.values(articles);
+    }
     
     useEffect(() => {
-    
+        setArticlesArray(convertObjectToArray);
     }, [articles]);
     
     return (
@@ -27,7 +31,7 @@ export default function LatestBlog({articles}) {
                 <div className="bg-white hover:drop-shadow-md rounded-xl mt-6">
                     <div className="grid grid-cols-2 cursor-pointer mobile:grid-cols-1"
                          onClick={() => {
-                             router.push(articles[0].route_url)
+                             router.push(articlesArray[0]?.route_url)
                          }}>
                         <div className="">
                             <Image
@@ -39,18 +43,18 @@ export default function LatestBlog({articles}) {
                         </div>
                         <div className="p-4 my-auto m-auto ml-4 flex flex-col">
                             <div className="text-sm text-gray-500">
-                                {articles[0].last_edited}
+                                {articlesArray[0]?.last_edited}
                             </div>
                             <div className="text-lg font-bold mt-4">
-                                {articles[0].title}
+                                {articlesArray[0]?.title}
                             </div>
                             
                             <div className="text-sm text-gray-500 mt-2">
-                                {articles[0].meta_description}
+                                {articlesArray[0]?.meta_description}
                             </div>
                             
                             <div className="text-sm text-gray-500 mt-6">
-                                {articles[0].author}
+                                {articlesArray[0]?.author}
                             </div>
                         </div>
                     </div>

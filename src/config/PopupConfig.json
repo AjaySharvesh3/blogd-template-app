@@ -4,5 +4,5 @@
   "button_color": "",
   "show_name_field": true,
   "show_email_field": true,
-  "popup_trigger": "scroll-to-bottom"
+  "popup_trigger": "on-page-loadd"
 }

@@ -1,18 +1,28 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import Img from "../assets/images/img.png";
 import {useRouter} from "next/router";
-import TemplateConfig from "../config/TemplateConfig.json";
+import GlobalBlogConfig from "../config/GlobalBlogConfig.json";
 
 
 export default function GridBlog({articles}) {
     
     const router = useRouter();
+    const TemplateConfig = GlobalBlogConfig.template_config;
+    const [articlesArray, setArticlesArray] = useState([]);
     let gridClasses = `grid grid-cols-${TemplateConfig.row_count} md:grid-cols-${TemplateConfig.row_count} lg:grid-cols-${TemplateConfig.row_count} gap-4 mobile:grid-cols-1`;
     
     useEffect(() => {
         gridClasses = `grid grid-cols-${TemplateConfig.row_count} md:grid-cols-${TemplateConfig.row_count} lg:grid-cols-${TemplateConfig.row_count} gap-4 mobile:grid-cols-1`;
     }, [TemplateConfig.row_count]);
+    
+    function convertObjectToArray() {
+        return Object.values(articles);
+    }
+    
+    useEffect(() => {
+        setArticlesArray(convertObjectToArray);
+    }, [articles]);
     
     return (
         <div className={"mb-12"}>
@@ -25,7 +35,7 @@ export default function GridBlog({articles}) {
                 </div>
                 
                 <div className={gridClasses}>
-                    {articles.map(article => (
+                    {articlesArray.map(article => (
                         <div className="bg-white hover:drop-shadow-md rounded-xl mt-6">
                             <div className="cursor-pointer"
                                  onClick={() => {

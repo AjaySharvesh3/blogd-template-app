@@ -1,12 +1,13 @@
 import React, {useEffect} from "react";
 import {useRouter} from "next/router";
 import Articles from "../config/Articles.json";
-import TopNavMain from "../config/TopNavMain.json";
-import TemplateConfig from "../config/TemplateConfig.json";
+import GlobalBlogConfig from "../config/GlobalBlogConfig.json";
 
 const TopNav = () => {
     
-    const {accent_color} = TemplateConfig;
+    const {accent_color} = GlobalBlogConfig.template_config;
+    const TopNavMain = GlobalBlogConfig.top_nav_main_config;
+    const TemplateConfig = GlobalBlogConfig.template_config;
     const router = useRouter();
     const [showSearch, setShowSearch] = React.useState(false);
     const [filteredArticles, setFilteredArticles] = React.useState([]);

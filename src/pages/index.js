@@ -4,10 +4,7 @@ import LatestBlog from "../component/LatestBlog";
 import GridBlog from "../component/GridBlog";
 import Articles from "../config/Articles.json";
 import Footer from "../component/Footer";
-import TopNavMain from "../config/TopNavMain.json";
 import PoweredByBlogd from "../component/PoweredByBlogd";
-import AppModal from "../component/AppModal";
-import NewsletterPopup from "../component/NewsletterPopup";
 
 export default function Home() {
     

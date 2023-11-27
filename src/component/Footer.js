@@ -1,7 +1,9 @@
 import React from "react";
-import TopNavMain from "../config/TopNavMain.json";
+import TemplateConfig from "../config/GlobalBlogConfig.json";
 
 const Footer = () => {
+    
+    const TopNavMain = TemplateConfig.top_nav_main_config;
     
     return (
         <div className="">
