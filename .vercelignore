@@ -1,0 +1,22 @@
+# ignore all files in the "node_modules" directory
+node_modules/
+
+# ignore all markdown files
+*.md
+
+# ignore specific directories
+tests/
+coverage/
+dist/
+
+# ignore configuration files
+*.config.js
+*.yml
+
+# ignore all files in the "src" directory except the "index.js"
+src/*
+!src/index.js
+
+# ignore files related to version control
+.git
+.gitignore
