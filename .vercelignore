@@ -14,8 +14,8 @@ dist/
 *.yml
 
 # ignore all files in the "src" directory except the "index.js"
-src/*
-!src/index.js
+# src/*
+# !src/index.js
 
 # ignore files related to version control
 .git
